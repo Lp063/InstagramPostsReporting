@@ -1,0 +1,50 @@
+
+		.input-component{
+			/*background-color: #0000000d;*/
+			margin: 2px 0px;
+			padding: 8px 13px;
+			display: inline-flex;
+			border-radius: 10px;
+		}
+
+		.delete-input-component{
+			margin: 50% 0%;
+		}
+
+		.button-outline{
+			border: 1px solid black;
+		    /*width: 133px;*/
+		    padding: 10px 9px;
+		    border-radius: 5px;
+		    text-align: center;
+		    height: 45px;
+		    font-size: 18px;
+		}
+
+		.success-button{
+			color: white;
+    		background: #00d469;
+    		border: 0px;
+		}
+		.blue-button {
+		    background-color: #1eb6ff;
+		    color: white;
+		    border: white;
+		}
+		.text-input{
+			border: none;
+			border-color: transparent;
+			width: 100%;
+			height: 36px;
+			outline: none;
+			border-bottom: 1px solid black;
+			font-size: 19px;
+		}
+
+		.hideOnLoad{
+			display:none;
+		}
+
+		a{
+			text-decoration: none !important;
+		}
