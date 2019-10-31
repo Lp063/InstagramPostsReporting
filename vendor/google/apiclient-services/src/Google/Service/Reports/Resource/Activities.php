@@ -34,7 +34,8 @@ class Google_Service_Reports_Resource_Activities extends Google_Service_Resource
    * (activities.listActivities)
    *
    * @param string $userKey Represents the profile ID or the user email for which
-   * the data should be filtered.
+   * the data should be filtered. Can be all for all information, or userKey for a
+   * user's unique G Suite profile ID or their primary email address.
    * @param string $applicationName Application name for which the events are to
    * be retrieved.
    * @param array $optParams Optional parameters.
@@ -135,7 +136,8 @@ class Google_Service_Reports_Resource_Activities extends Google_Service_Resource
    * see Receiving Push Notifications. (activities.watch)
    *
    * @param string $userKey Represents the profile ID or the user email for which
-   * the data should be filtered.
+   * the data should be filtered. Can be all for all information, or userKey for a
+   * user's unique G Suite profile ID or their primary email address.
    * @param string $applicationName Application name for which the events are to
    * be retrieved.
    * @param Google_Service_Reports_Channel $postBody

@@ -17,6 +17,10 @@
 
 class Google_Service_Docs_Request extends Google_Model
 {
+  protected $createFooterType = 'Google_Service_Docs_CreateFooterRequest';
+  protected $createFooterDataType = '';
+  protected $createHeaderType = 'Google_Service_Docs_CreateHeaderRequest';
+  protected $createHeaderDataType = '';
   protected $createNamedRangeType = 'Google_Service_Docs_CreateNamedRangeRequest';
   protected $createNamedRangeDataType = '';
   protected $createParagraphBulletsType = 'Google_Service_Docs_CreateParagraphBulletsRequest';
@@ -68,6 +72,34 @@ class Google_Service_Docs_Request extends Google_Model
   protected $updateTextStyleType = 'Google_Service_Docs_UpdateTextStyleRequest';
   protected $updateTextStyleDataType = '';
 
+  /**
+   * @param Google_Service_Docs_CreateFooterRequest
+   */
+  public function setCreateFooter(Google_Service_Docs_CreateFooterRequest $createFooter)
+  {
+    $this->createFooter = $createFooter;
+  }
+  /**
+   * @return Google_Service_Docs_CreateFooterRequest
+   */
+  public function getCreateFooter()
+  {
+    return $this->createFooter;
+  }
+  /**
+   * @param Google_Service_Docs_CreateHeaderRequest
+   */
+  public function setCreateHeader(Google_Service_Docs_CreateHeaderRequest $createHeader)
+  {
+    $this->createHeader = $createHeader;
+  }
+  /**
+   * @return Google_Service_Docs_CreateHeaderRequest
+   */
+  public function getCreateHeader()
+  {
+    return $this->createHeader;
+  }
   /**
    * @param Google_Service_Docs_CreateNamedRangeRequest
    */

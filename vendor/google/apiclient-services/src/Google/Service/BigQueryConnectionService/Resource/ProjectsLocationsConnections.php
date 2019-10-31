@@ -33,8 +33,8 @@ class Google_Service_BigQueryConnectionService_Resource_ProjectsLocationsConnect
    * @param Google_Service_BigQueryConnectionService_Connection $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string connectionId Optional connection id that should be assigned
-   * to the created connection.
+   * @opt_param string connectionId Optional. Connection id that should be
+   * assigned to the created connection.
    * @return Google_Service_BigQueryConnectionService_Connection
    */
   public function create($parent, Google_Service_BigQueryConnectionService_Connection $postBody, $optParams = array())
@@ -96,8 +96,8 @@ class Google_Service_BigQueryConnectionService_Resource_ProjectsLocationsConnect
    * `projects/{project_id}/locations/{location_id}`
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pageToken Page token.
    * @opt_param string maxResults Maximum number of results per page.
+   * @opt_param string pageToken Page token.
    * @return Google_Service_BigQueryConnectionService_ListConnectionsResponse
    */
   public function listProjectsLocationsConnections($parent, $optParams = array())

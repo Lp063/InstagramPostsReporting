@@ -1,5 +1,5 @@
 --TEST--
-PHPUnit_Framework_MockObject_Generator::generate('Foo', array(), 'MockFoo', TRUE, TRUE)
+PHPUnit_Framework_MockObject_Generator::generate('Foo', array(), 'MockFoo', true, true)
 --FILE--
 <?php
 class Foo
@@ -13,14 +13,16 @@ class Foo
     }
 }
 
-require_once 'PHPUnit/Autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
-$mock = PHPUnit_Framework_MockObject_Generator::generate(
-  'Foo',
-  array(),
-  'MockFoo',
-  TRUE,
-  TRUE
+$generator = new PHPUnit_Framework_MockObject_Generator;
+
+$mock = $generator->generate(
+    'Foo',
+    array(),
+    'MockFoo',
+    true,
+    true
 );
 
 print $mock['code'];
@@ -28,8 +30,9 @@ print $mock['code'];
 --EXPECTF--
 class MockFoo extends Foo implements PHPUnit_Framework_MockObject_MockObject
 {
-    private static $__phpunit_staticInvocationMocker;
     private $__phpunit_invocationMocker;
+    private $__phpunit_originalObject;
+    private $__phpunit_configurable = ['bar', 'baz'];
 
     public function __clone()
     {
@@ -50,9 +53,9 @@ class MockFoo extends Foo implements PHPUnit_Framework_MockObject_MockObject
         }
 
         $result = $this->__phpunit_getInvocationMocker()->invoke(
-          new PHPUnit_Framework_MockObject_Invocation_Object(
-            'Foo', 'bar', $arguments, $this, TRUE
-          )
+            new PHPUnit_Framework_MockObject_Invocation_Object(
+                'Foo', 'bar', $arguments, '', $this, true
+            )
         );
 
         return $result;
@@ -72,9 +75,9 @@ class MockFoo extends Foo implements PHPUnit_Framework_MockObject_MockObject
         }
 
         $result = $this->__phpunit_getInvocationMocker()->invoke(
-          new PHPUnit_Framework_MockObject_Invocation_Object(
-            'Foo', 'baz', $arguments, $this, TRUE
-          )
+            new PHPUnit_Framework_MockObject_Invocation_Object(
+                'Foo', 'baz', $arguments, '', $this, true
+            )
         );
 
         return $result;
@@ -85,44 +88,38 @@ class MockFoo extends Foo implements PHPUnit_Framework_MockObject_MockObject
         return $this->__phpunit_getInvocationMocker()->expects($matcher);
     }
 
-    public static function staticExpects(PHPUnit_Framework_MockObject_Matcher_Invocation $matcher)
+    public function method()
     {
-        return self::__phpunit_getStaticInvocationMocker()->expects($matcher);
+        $any = new PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount;
+        $expects = $this->expects($any);
+        return call_user_func_array(array($expects, 'method'), func_get_args());
+    }
+
+    public function __phpunit_setOriginalObject($originalObject)
+    {
+        $this->__phpunit_originalObject = $originalObject;
     }
 
     public function __phpunit_getInvocationMocker()
     {
-        if ($this->__phpunit_invocationMocker === NULL) {
-            $this->__phpunit_invocationMocker = new PHPUnit_Framework_MockObject_InvocationMocker;
+        if ($this->__phpunit_invocationMocker === null) {
+            $this->__phpunit_invocationMocker = new PHPUnit_Framework_MockObject_InvocationMocker($this->__phpunit_configurable);
         }
 
         return $this->__phpunit_invocationMocker;
     }
 
-    public static function __phpunit_getStaticInvocationMocker()
-    {
-        if (self::$__phpunit_staticInvocationMocker === NULL) {
-            self::$__phpunit_staticInvocationMocker = new PHPUnit_Framework_MockObject_InvocationMocker;
-        }
-
-        return self::$__phpunit_staticInvocationMocker;
-    }
-
     public function __phpunit_hasMatchers()
     {
-        return self::__phpunit_getStaticInvocationMocker()->hasMatchers() ||
-               $this->__phpunit_getInvocationMocker()->hasMatchers();
+        return $this->__phpunit_getInvocationMocker()->hasMatchers();
     }
 
-    public function __phpunit_verify()
+    public function __phpunit_verify($unsetInvocationMocker = true)
     {
-        self::__phpunit_getStaticInvocationMocker()->verify();
         $this->__phpunit_getInvocationMocker()->verify();
-    }
 
-    public function __phpunit_cleanup()
-    {
-        self::$__phpunit_staticInvocationMocker = NULL;
-        $this->__phpunit_invocationMocker       = NULL;
+        if ($unsetInvocationMocker) {
+            $this->__phpunit_invocationMocker = null;
+        }
     }
 }

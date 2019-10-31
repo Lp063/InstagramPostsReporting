@@ -22,6 +22,8 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   protected $desiredAddonsConfigDataType = '';
   protected $desiredBinaryAuthorizationType = 'Google_Service_Container_BinaryAuthorization';
   protected $desiredBinaryAuthorizationDataType = '';
+  protected $desiredClusterAutoscalingType = 'Google_Service_Container_ClusterAutoscaling';
+  protected $desiredClusterAutoscalingDataType = '';
   protected $desiredDatabaseEncryptionType = 'Google_Service_Container_DatabaseEncryption';
   protected $desiredDatabaseEncryptionDataType = '';
   public $desiredImageType;
@@ -39,6 +41,8 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   public $desiredNodeVersion;
   protected $desiredResourceUsageExportConfigType = 'Google_Service_Container_ResourceUsageExportConfig';
   protected $desiredResourceUsageExportConfigDataType = '';
+  protected $desiredVerticalPodAutoscalingType = 'Google_Service_Container_VerticalPodAutoscaling';
+  protected $desiredVerticalPodAutoscalingDataType = '';
 
   /**
    * @param Google_Service_Container_AddonsConfig
@@ -67,6 +71,20 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   public function getDesiredBinaryAuthorization()
   {
     return $this->desiredBinaryAuthorization;
+  }
+  /**
+   * @param Google_Service_Container_ClusterAutoscaling
+   */
+  public function setDesiredClusterAutoscaling(Google_Service_Container_ClusterAutoscaling $desiredClusterAutoscaling)
+  {
+    $this->desiredClusterAutoscaling = $desiredClusterAutoscaling;
+  }
+  /**
+   * @return Google_Service_Container_ClusterAutoscaling
+   */
+  public function getDesiredClusterAutoscaling()
+  {
+    return $this->desiredClusterAutoscaling;
   }
   /**
    * @param Google_Service_Container_DatabaseEncryption
@@ -193,5 +211,19 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   public function getDesiredResourceUsageExportConfig()
   {
     return $this->desiredResourceUsageExportConfig;
+  }
+  /**
+   * @param Google_Service_Container_VerticalPodAutoscaling
+   */
+  public function setDesiredVerticalPodAutoscaling(Google_Service_Container_VerticalPodAutoscaling $desiredVerticalPodAutoscaling)
+  {
+    $this->desiredVerticalPodAutoscaling = $desiredVerticalPodAutoscaling;
+  }
+  /**
+   * @return Google_Service_Container_VerticalPodAutoscaling
+   */
+  public function getDesiredVerticalPodAutoscaling()
+  {
+    return $this->desiredVerticalPodAutoscaling;
   }
 }

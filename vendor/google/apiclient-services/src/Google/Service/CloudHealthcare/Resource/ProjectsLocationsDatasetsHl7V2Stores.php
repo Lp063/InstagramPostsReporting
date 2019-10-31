@@ -103,14 +103,14 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsHl7V2Stor
    * @param string $parent Name of the dataset.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pageToken The next_page_token value returned from the
-   * previous List request, if any.
-   * @opt_param int pageSize Limit on the number of HL7v2 stores to return in a
-   * single response. If zero the default page size of 100 is used.
    * @opt_param string filter Restricts stores returned to those matching a
    * filter. Syntax:
    * https://cloud.google.com/appengine/docs/standard/python/search/query_strings
    * Only filtering on labels is supported. For example, `labels.key=value`.
+   * @opt_param string pageToken The next_page_token value returned from the
+   * previous List request, if any.
+   * @opt_param int pageSize Limit on the number of HL7v2 stores to return in a
+   * single response. If zero the default page size of 100 is used.
    * @return Google_Service_CloudHealthcare_ListHl7V2StoresResponse
    */
   public function listProjectsLocationsDatasetsHl7V2Stores($parent, $optParams = array())
@@ -141,7 +141,10 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsHl7V2Stor
   }
   /**
    * Sets the access control policy on the specified resource. Replaces any
-   * existing policy. (hl7V2Stores.setIamPolicy)
+   * existing policy.
+   *
+   * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   * (hl7V2Stores.setIamPolicy)
    *
    * @param string $resource REQUIRED: The resource for which the policy is being
    * specified. See the operation documentation for the appropriate value for this

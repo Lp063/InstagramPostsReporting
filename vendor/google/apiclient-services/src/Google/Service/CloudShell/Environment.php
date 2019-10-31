@@ -19,6 +19,7 @@ class Google_Service_CloudShell_Environment extends Google_Collection
 {
   protected $collection_key = 'publicKeys';
   public $dockerImage;
+  public $httpsPorts;
   public $id;
   public $name;
   protected $publicKeysType = 'Google_Service_CloudShell_PublicKey';
@@ -38,6 +39,14 @@ class Google_Service_CloudShell_Environment extends Google_Collection
   public function getDockerImage()
   {
     return $this->dockerImage;
+  }
+  public function setHttpsPorts($httpsPorts)
+  {
+    $this->httpsPorts = $httpsPorts;
+  }
+  public function getHttpsPorts()
+  {
+    return $this->httpsPorts;
   }
   public function setId($id)
   {
