@@ -6,13 +6,13 @@
         execution: 
 */
 
-// for travisCI
-require __DIR__ . '..\..\model\instagram.php';
-require_once 'PHPUnit\Autoload.php';
 
-//local     
-//require __DIR__ . '../../model/instagram.php';
-//require_once 'PHPUnit/Autoload.php';
+// require __DIR__ . '..\..\model\instagram.php';
+// require_once 'PHPUnit\Autoload.php';
+
+
+require __DIR__ . '../../model/instagram.php';
+require_once 'PHPUnit/Autoload.php';
 
 //use PHPUnit\Framework\TestCase;
 
