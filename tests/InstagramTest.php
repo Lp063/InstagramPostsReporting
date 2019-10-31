@@ -5,7 +5,7 @@
         Documentation: https://phpunit.de/getting-started/phpunit-5.html
         execution: 
 */
-require __DIR__ . '..\..\model\instagram.php';
+require __DIR__ . '../../model/instagram.php';
 require_once 'PHPUnit/Autoload.php';
 //use PHPUnit\Framework\TestCase;
 
