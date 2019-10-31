@@ -6,3 +6,4 @@
   notifications:
     email:
       - lohit@unboxsocial.com
+  script: phpunit tests\InstagramTest.php
