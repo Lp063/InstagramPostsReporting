@@ -13,11 +13,11 @@
 
 require __DIR__ . '../../model/instagram.php';
 require_once 'PHPUnit/Autoload.php';
-include __DIR__ . '/../vendor/autoload.php'
+//include __DIR__ . '/../vendor/autoload.php'
 
 //use PHPUnit\Framework\TestCase;
 
-final class InstagramTest extends PHPUnit_Framework_TestCase
+class InstagramTest extends PHPUnit_Framework_TestCase
 {
     public function testGetReport(){
         $rawHandles=[
