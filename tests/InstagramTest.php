@@ -5,8 +5,15 @@
         Documentation: https://phpunit.de/getting-started/phpunit-5.html
         execution: 
 */
-require __DIR__ . '../../model/instagram.php';
-require_once 'PHPUnit/Autoload.php';
+
+// for travisCI
+require __DIR__ . '..\..\model\instagram.php';
+require_once 'PHPUnit\Autoload.php';
+
+//local     
+//require __DIR__ . '../../model/instagram.php';
+//require_once 'PHPUnit/Autoload.php';
+
 //use PHPUnit\Framework\TestCase;
 
 final class InstagramTest extends PHPUnit_Framework_TestCase
