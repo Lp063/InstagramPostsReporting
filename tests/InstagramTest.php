@@ -13,6 +13,7 @@
 
 require __DIR__ . '../../model/instagram.php';
 require_once 'PHPUnit/Autoload.php';
+include __DIR__ . '/../vendor/autoload.php'
 
 //use PHPUnit\Framework\TestCase;
 
