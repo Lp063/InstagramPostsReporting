@@ -26,6 +26,12 @@
     		background: #00d469;
     		border: 0px;
 		}
+
+		.loader-text{
+		    margin: 4% 45%;
+		    text-align: center;
+		    font-size: 23px;
+		}
 		.blue-button {
 		    background-color: #1eb6ff;
 		    color: white;

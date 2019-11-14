@@ -66,7 +66,7 @@
 						<div id="submitButton" class="button-outline success-button">
 							Submit
 						</div>
-
+						<div id="postSubmitLoader" class="hideOnLoad loader-text">Loading...</div>
 						<a id="downloadLink" class="hideOnLoad" href="" download>
 							<div id="addMoreButton" class="button-outline blue-button">
 								Download

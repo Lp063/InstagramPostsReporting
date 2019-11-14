@@ -21,17 +21,18 @@ $( "#submitButton" ).click(function(e) {
 	});
 
 	$("#submitButton").hide();
+	$("#postSubmitLoader").show();
 	$.post('http://192.168.2.116/project/InstagramPostsReporting/instagram.php',{
 		data:urlList
 	},function(response){
 		var response = jQuery.parseJSON(response);
 		if(response.success){
+			$("#postSubmitLoader").hide();
 			$("#downloadLink").attr("href",response.data);
-			$(".hideOnLoad").show();
-			// $("#downloadLink").show();
-			// $("#clearFields").show();
+
+			$("#clearFields").show();
+			$("#downloadLink").show();
 		}
-		$("#jsonOutput").text(response);
 	});
 });
 

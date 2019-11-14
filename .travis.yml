@@ -1,7 +1,6 @@
 dist: trusty
 language: php
 php:
-  - '5.4'
   - '5.6'
 before_script:
   - composer install
@@ -9,3 +8,8 @@ script:
   - composer --version
   - phpunit --version
   - echo "skipping tests"
+deploy:
+  provider: heroku
+  api_key:
+    secure: "075d91ba-71de-440b-919c-e4b59968c27e"
+  app: deceptionpoint
