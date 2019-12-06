@@ -22,7 +22,7 @@ $( "#submitButton" ).click(function(e) {
 
 	$("#submitButton").hide();
 	$("#postSubmitLoader").show();
-	$.post('http://192.168.2.116/project/InstagramPostsReporting/instagram.php',{
+	$.post(base_url+'InstagramPostsReporting/instagram.php',{
 		data:urlList
 	},function(response){
 		var response = jQuery.parseJSON(response);
