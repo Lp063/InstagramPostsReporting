@@ -7,9 +7,11 @@ before_script:
 script: 
   - composer --version
   - phpunit --version
-  - echo "skipping tests"
+  - vendor/bin/phpunit --testdox
 deploy:
   provider: heroku
   api_key:
-    secure: "075d91ba-71de-440b-919c-e4b59968c27e"
+    secure: ""
   app: deceptionpoint
+  on:
+    repo: Lp063/InstagramPostsReporting
