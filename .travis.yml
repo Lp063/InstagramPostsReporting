@@ -7,4 +7,5 @@ before_script:
 script: 
   - composer --version
   - phpunit --version
-  - php ./vendor/bin/phpunit --testdox
+  - php --version
+  - ./vendor/bin/phpunit --testdox
