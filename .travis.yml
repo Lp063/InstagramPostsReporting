@@ -4,5 +4,6 @@ php:
   - '5.6'
 before_script:
   - composer install
+  - sudo chmod 0775 vendor/bin/phpunit
 script:
   - vendor/bin/phpunit
