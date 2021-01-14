@@ -34,7 +34,7 @@ class InstagramTest extends PHPUnit_Framework_TestCase
             "https://www.instagram.com/rits_badiani/",
             "https://www.instagram.com/vitastabhat/"
         ];
-        $this->assertCount(9,$rawHandles);
+        $this->assertCount(8,$rawHandles);
     }
 }
 
