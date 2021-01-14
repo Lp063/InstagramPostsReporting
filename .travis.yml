@@ -8,4 +8,4 @@ script:
   - composer --version
   - phpunit --version
   - php --version
-  - ./vendor/bin/phpunit --testdox
+  - php ./vendor/bin/phpunit --testdox
