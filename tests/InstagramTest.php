@@ -19,6 +19,9 @@ require_once 'PHPUnit/Autoload.php';
 
 class InstagramTest extends PHPUnit_Framework_TestCase
 {
+    /*
+        @test
+    */
     public function testGetReport(){
         $rawHandles=[
             "https://www.instagram.com/aashnahegde/",

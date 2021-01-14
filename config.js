@@ -1,1 +1,1 @@
-const base_url="http://lohit.heliohost.org/";
+const base_url="http://localhost/project/";
