@@ -6,4 +6,4 @@ before_script:
   - composer install
   - sudo chmod 0775 vendor/bin/phpunit
 script:
-  - vendor/bin/phpunit
+  - vendor/phpunit/phpunit/phpunit
